@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .navbar {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 4rem auto;
+        padding: 0 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      .modal {
+        /* display: none; */
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: relative;
+      }
+
+      .modal-content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        /* margin: 15% auto; */
+        padding: 20px;
+        width: 80%;
+        max-width: 600px;
+        max-height: 600px;
+        background-color: #fefefe;
+        border: 1px solid #888;
+        border-radius: 10px;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .modal-content > img {
+        max-width: 500px;
+        max-width: 500px;
+        margin: auto;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 600px) {
+        .container {
+          padding: 0 10px;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <h2>Admin Panel</h2>
+    </div>
+
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>KYC Image</th>
+            <th>Verify</th>
+          </tr>
+        </thead>
+        <tbody id="userTableBody">
+        </tbody>
+      </table>
+    </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="verify-image-display" src="" alt="Image" />
+      </div>
+    </div>
+
+    <script>
+      const userdata = [
+        {
+          email: "steve@gmail.com",
+          picture:
+            "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          verify: false,
+        },
+        {
+          email: "darshan@gmail.com",
+          picture:
+            "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          verify: false,
+        },
+        {
+          email: "dhruv@gmail.com",
+          picture:
+            "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          verify: false,
+        },
+        {
+          email: "deepesh@gmail.com",
+          picture:
+            "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          verify: false,
+        },
+      ];
+
+      var tbody = document.getElementById("userTableBody");
+
+      // Loop through the userdata array
+      userdata.forEach(function (user) {
+        // Create a new table row
+        var row = document.createElement("tr");
+
+        // Create table data for email
+        var emailData = document.createElement("td");
+        emailData.textContent = user.email;
+
+        // Create table data for the "View Image" button
+        var viewImageData = document.createElement("td");
+        var viewImageButton = document.createElement("button");
+        viewImageButton.textContent = "View Image";
+        viewImageButton.onclick = function () {
+          openModal(user.picture);
+        };
+        viewImageData.appendChild(viewImageButton);
+
+        // Create table data for the "Verify" button
+        var verifyData = document.createElement("td");
+        var verifyButton = document.createElement("button");
+        verifyButton.id = "verify-button"
+        verifyButton.setAttribute('data-email', user.email);
+        verifyButton.textContent = "Verify";
+        verifyButton.onclick = function () {
+          verifyUser(user.email);
+        };
+        verifyData.appendChild(verifyButton);
+
+        // Append table data to the table row
+        row.appendChild(emailData);
+        row.appendChild(viewImageData);
+        row.appendChild(verifyData);
+
+        // Append the table row to the tbody
+        tbody.appendChild(row);
+      });
+// updateverify
+// fetchallusers
+      fetch("http://localhost:5000", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Response:", data);
+        });
+
+      function openModal(img) {
+        const model = document.getElementById("myModal");
+        const image_disp = document.getElementById("verify-image-display");
+        model.style.display = "block";
+        image_disp.src = img;
+      }
+
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+      }
+
+      function verifyUser(email) {
+        alert("User verified! " + email);
+        // You can make an AJAX call to verify user on the backend here
+      }
+    </script>
+  </body>
+</html>
