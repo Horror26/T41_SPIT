@@ -2,14 +2,14 @@ import React from 'react'
 import { Menu, X, MapPin } from 'lucide-react'
 const locations = [
     {
-      title: 'Bengaluru office',
+      title: 'Navi Mumbai office',
       timings: 'Mon-Sat 9am to 5pm.',
-      address: '100, Electronic City Phase-1, Bengaluru, Karnataka 560100 IN',
+      address: '100, Electronic City Phase-1, navi-Mumbai,Maharashtra 560100 IN',
     },
     {
       title: 'Head office',
       timings: 'Mon-Sat 9am to 5pm.',
-      address: '12th Main Rd, Indiranagar, Bengaluru, Karnataka 560008 IN',
+      address: '12th Main Rd, Indiranagar, kandivali, Maharashtra 400101 IN',
     },
     {
       title: 'Karnataka office',
@@ -147,7 +147,6 @@ const locations = [
         </div>
       </div>
       <hr className="mt-6" />
-      {/* footer */}
       
     </div>
     )
