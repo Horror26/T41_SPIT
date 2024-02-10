@@ -14,6 +14,9 @@ const UserSchema = new Schema({
   picture: {
     type: String,
   },
+  verified: {
+    type: Boolean,
+  },
 });
 const User = mongoose.model("User", UserSchema);
 module.exports = User;

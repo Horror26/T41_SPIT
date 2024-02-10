@@ -13,7 +13,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, email, picture } = req.body;
+    const { name, email, picture, verified } = req.body;
     try {
       let user = await User.findOne({ email });
 
@@ -24,6 +24,7 @@ router.post(
           name: name,
           email: email,
           picture: picture,
+          verified: verified,
         });
         res.status(200).send("Created");
       }
