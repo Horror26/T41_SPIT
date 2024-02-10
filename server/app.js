@@ -13,5 +13,6 @@ app.use(express.json());
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/farmer", require("./routes/farmer"));
 app.use("/api/lender", require("./routes/lender"));
+app.use("/api/connection", require("./routes/connection"));
 
 app.listen(port, () => console.log(`backend listening on port ${port}`));
