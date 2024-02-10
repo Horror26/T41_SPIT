@@ -13,6 +13,7 @@ const UserSchema = new Schema({
   },
   picture: {
     type: String,
+    default: "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   },
   verified: {
     type: Boolean,

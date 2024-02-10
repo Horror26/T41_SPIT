@@ -54,7 +54,7 @@ router.put("/updateverified", async (req, res) => {
 
     user = await User.findByIdAndUpdate(
       id,
-      { $set: { verified: !user.verified } },
+      { verified: !user.verified } ,
       { new: true }
     );
     res.json({ user });
