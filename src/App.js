@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import Footer from "./common/Footer";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+import { Landing } from "./pages/Landing/Landing";
 function App() {
   const authModal = useAuthModal();
 
@@ -21,7 +22,8 @@ function App() {
       <Navbar />
       <div className="bg-gray-100 ">
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<Landing/>}/>
+        <Route path="/home" element={<Home/>}/>
         <Route path="/contact" element={<Contact/>}/>
       </Routes>
       </div>
