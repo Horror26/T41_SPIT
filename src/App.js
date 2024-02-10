@@ -14,22 +14,22 @@ function App() {
   useEffect(() => {
     if (localStorage.getItem("id")) {
       authModal.onOpen();
-      console.log("llll");
     }
+    console.log(authModal.isOpen);
   }, []);
 
   return (
     <div className="App">
       <Navbar />
       <div className="bg-gray-100 ">
-      <Routes>
-        <Route path="/" element={<Landing/>}/>
-        <Route path="/home" element={<Home/>}/>
-        <Route path="/contact" element={<Contact/>}/>
-        <Route path="/About" element={<About/>}/>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/About" element={<About />} />
+        </Routes>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

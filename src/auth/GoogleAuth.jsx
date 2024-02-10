@@ -26,6 +26,8 @@ const GoogleAuth = () => {
         }
       );
       setProfile(res.data);
+      console.log(res.data);
+      localStorage.setItem("id", JSON.stringify(res.data));
     } catch (error) {
       console.log(error);
     }
@@ -37,11 +39,18 @@ const GoogleAuth = () => {
     }
   }, [user]);
 
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("id"));
+    setProfile(data);
+    console.log("data");
+    console.log(data);
+  }, []);
+
   const getToken = async (name, email, picture) => {
     console.log(name, email, picture);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth",
+        "http://localhost:8000/api/auth/authenticate",
         {
           name,
           email,
@@ -53,9 +62,6 @@ const GoogleAuth = () => {
           },
         }
       );
-
-      console.log(res.data);
-      localStorage.setItem("id", res);
       authModal.onOpen();
     } catch (error) {
       console.error("Error", error.message);
@@ -63,7 +69,7 @@ const GoogleAuth = () => {
   };
 
   useEffect(() => {
-    if (profile.length != 0) {
+    if (profile && profile.length != 0) {
       getToken({
         name: profile.name,
         email: profile.email,
@@ -74,7 +80,7 @@ const GoogleAuth = () => {
 
   return (
     <>
-      {profile.length != 0 ? (
+      {profile && profile.length != 0 ? (
         <div className="flex items-center gap-3">
           <img
             className="w-10 h-10 rounded-full"
