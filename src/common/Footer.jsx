@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../assets/logo.webp";
+import Logo from "../assets/logof.jpg";
 import "./Footer.css";
 import { FaLinkedin, FaTwitter, FaGoogle, FaInstagram } from "react-icons/fa";
 
@@ -57,23 +57,23 @@ export const Footer = () => {
                   href="https://www.linkedin.com/in/darshan-jaju-73b237223/"
                   target="blank"
                 >
-                  <FaLinkedin className=" mx-auto mt-3 scale-125" />
+                  <FaLinkedin className=" mx-auto mt-3 scale-100" />
                 </a>
                 <a href="https://twitter.com/Darshanjaju5" target="blank">
-                  <FaTwitter className=" mx-auto mt-3 scale-125" />
+                  <FaTwitter className=" mx-auto mt-3 scale-100" />
                 </a>
 
                 <a href="https://www.instagram.com/dj__260/" target="blank">
-                  <FaInstagram className=" mx-auto mt-3 scale-125" />
+                  <FaInstagram className=" mx-auto mt-3 scale-100" />
                 </a>
               </div>
             </div>
           </div>
         </div>
-        <div className=" flex flex-col sm:flex-row justify-center items-center gap-4 ">
-        <p className="text-white text-2xl my-2  ">© 2023</p>
+        <div className=" flex flex-row sm:flex-row justify-center items-center gap-4 ">
+        <p className="text-white text-xl my-2  ">© 2023</p>
         <div className=" ">
-        <img  src={Logo} alt="" width={75} height={30} className="rounded-xl border-2 border-white p-2" />
+        <img  src={Logo} alt="" width={100} height={30} className="rounded-xl border-2 border-white p-2" />
         </div>
       </div>
       
