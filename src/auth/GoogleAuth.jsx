@@ -39,11 +39,21 @@ const GoogleAuth = () => {
   const getToken = async (name, email, picture) => {
     console.log(name, email, picture);
     try {
-      const res = await axios.post("https://api.example.com/data", {
-        name,
-        email,
-        picture,
-      });
+
+      const res = await axios.post(
+        "http://localhost:5000/api/auth",
+        {
+          name,
+          email,
+          picture,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
       console.log(res.data);
       localStorage.setItem("id", res);
       authModal.onOpen();
