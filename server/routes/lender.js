@@ -13,10 +13,11 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { email, min, max, phone } = req.body;
+    const { email, name, min, max, phone } = req.body;
     try {
       await Lender.create({
         email: email,
+        name: name,
         min: min,
         max: max,
         phone: phone,

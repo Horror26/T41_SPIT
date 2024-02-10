@@ -13,10 +13,12 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { email, address, landsize, location, assests, phone } = req.body;
+    const { email, name, address, landsize, location, assests, phone } =
+      req.body;
     try {
       await Farmer.create({
         email: email,
+        name: name,
         address: address,
         landsize: landsize,
         location: location,
