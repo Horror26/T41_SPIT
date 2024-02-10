@@ -16,6 +16,7 @@ const UserSchema = new Schema({
   },
   verified: {
     type: Boolean,
+    default: false,
   },
 });
 const User = mongoose.model("User", UserSchema);
