@@ -6,11 +6,11 @@ import logo from "../assets/logo.webp"
 const menuItems = [
   {
     name: "Home",
-    href: "#",
+    href: "/",
   },
   {
     name: "About",
-    href: "#",
+    href: "/about",
   },
   {
     name: "Contact",
@@ -26,7 +26,7 @@ export function Navbar() {
   };
 
   return (
-    <div className="relative w-full bg-green-300">
+    <div className="relative w-full bg-slate-100-300">
       <div className="mx-auto flex max-w-7xl h-16 items-center justify-between px-4 py-1 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
           <span>
@@ -94,7 +94,7 @@ export function Navbar() {
                         />
                       </svg>
                     </span>
-                    <span className="font-bold">DevUI</span>
+                    <span className="font-bold">AgroFarm</span>
                   </div>
                   <div className="-mr-2">
                     <button
