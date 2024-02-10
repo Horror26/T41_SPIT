@@ -1,6 +1,7 @@
 import React from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import GoogleAuth from "../auth/GoogleAuth";
+import logo from "../assets/logo.webp"
 
 const menuItems = [
   {
@@ -13,7 +14,7 @@ const menuItems = [
   },
   {
     name: "Contact",
-    href: "#",
+    href: "/contact",
   },
 ];
 
@@ -62,6 +63,7 @@ export function Navbar() {
           </ul>
         </div>
         <div className="hidden space-x-2 lg:block">
+        <div><logo/></div>
           <button
             type="button"
             className="rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-black hover:bg-black/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
