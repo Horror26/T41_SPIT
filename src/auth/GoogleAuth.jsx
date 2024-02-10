@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import useAuthModal from "../hooks/useAuthModal";
+import Logo from "../assets/logo.webp";
 
 const GoogleAuth = () => {
   const [user, setUser] = useState([]);
@@ -39,7 +40,6 @@ const GoogleAuth = () => {
   const getToken = async (name, email, picture) => {
     console.log(name, email, picture);
     try {
-
       const res = await axios.post(
         "http://localhost:5000/api/auth",
         {
@@ -86,7 +86,13 @@ const GoogleAuth = () => {
           </p>
         </div>
       ) : (
-        <button onClick={() => login()}>Google</button>
+        <button
+          className="flex items-center rounded-xl border-2 border-black p-1"
+          onClick={() => login()}
+        >
+          <img src={Logo} alt="" width={25} height={25} />
+          <p>Google</p>
+        </button>
       )}
     </>
   );

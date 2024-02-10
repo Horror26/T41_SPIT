@@ -3,6 +3,16 @@ const router = express.Router();
 const { body, validationResult } = require("express-validator");
 const Lender = require("../models/Lender");
 
+router.get("/fetchalllenders", async (req, res) => {
+  try {
+    const lenders = await Lender.find({});
+    res.json(lenders);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send("Some error occured");
+  }
+});
+
 router.post(
   "/add",
   [body("email", "Enter a valid email").isEmail()],
