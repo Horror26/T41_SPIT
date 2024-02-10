@@ -1,34 +1,32 @@
-
-import React from 'react'
-import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
-import GoogleAuth from '../auth/GoogleAuth';
-
+import React from "react";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
+import GoogleAuth from "../auth/GoogleAuth";
 
 const menuItems = [
   {
-    name: 'Home',
-    href: '#',
+    name: "Home",
+    href: "#",
   },
   {
-    name: 'About',
-    href: '#',
+    name: "About",
+    href: "#",
   },
   {
-    name: 'Contact',
-    href: '#',
+    name: "Contact",
+    href: "#",
   },
-]
+];
 
 export function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <div className="relative w-full bg-green-300">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl h-16 items-center justify-between px-4 py-1 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
           <span>
             <svg
@@ -68,9 +66,8 @@ export function Navbar() {
             type="button"
             className="rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-black hover:bg-black/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
           >
-           <GoogleAuth />
+            <GoogleAuth />
           </button>
-          
         </div>
         <div className="lg:hidden">
           <Menu onClick={toggleMenu} className="h-6 w-6 cursor-pointer" />
@@ -133,7 +130,6 @@ export function Navbar() {
                   >
                     <GoogleAuth />
                   </button>
-                  
                 </div>
               </div>
             </div>
@@ -141,6 +137,6 @@ export function Navbar() {
         )}
       </div>
     </div>
-  )
+  );
 }
 export default Navbar;
