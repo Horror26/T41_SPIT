@@ -93,7 +93,7 @@ const GoogleAuth = () => {
         </div>
       ) : (
         <button
-          className="flex items-center rounded-xl border-2 border-black p-1"
+          className="flex items-center rounded-xl border-2  p-1 "
           onClick={() => login()}
         >
           <img src={Logo} alt="" width={25} height={25} />

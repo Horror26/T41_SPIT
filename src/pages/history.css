@@ -1,0 +1,95 @@
+.history {
+    width: 60%;
+    margin: auto;
+}
+
+.header-details {
+    padding-top: 1.5rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-details>div>h1 {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.header-details>div {
+    text-align: center;
+}
+
+.header-details>div>h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.ag-theme-quartz .ag-header-cell {
+    border-color: transparent !important;
+    /* Set border color to transparent */
+}
+
+@media screen and (max-width: 1024px) {
+    .history {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-details>div>h1 {
+        font-size: 2.5rem;
+        font-weight: 900;
+    }
+
+    .header-details>div {
+        text-align: center;
+    }
+    .header-details>div>h3 {
+        font-size: .8rem;
+    }
+
+    .header-details>div>h2 {
+        font-size: 1.7rem;
+        font-weight: 600;
+    }
+}
+@media screen and (max-width: 574px) {
+    .header-details>div>h1 {
+        font-size: 1.8rem;
+        font-weight: 900;
+    }
+
+    .header-details>div {
+        text-align: center;
+    }
+    .header-details>div>h3 {
+        font-size: .7rem;
+    }
+
+    .header-details>div>h2 {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+}
+@media screen and (max-width: 425px) {
+    .history {
+        width: 90%;
+    }
+    .header-details>div>h1 {
+        font-size: 1.4rem;
+        font-weight: 900;
+    }
+
+    .header-details>div {
+        text-align: center;
+    }
+    .header-details>div>h3 {
+        font-size: .6rem;
+    }
+
+    .header-details>div>h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+}

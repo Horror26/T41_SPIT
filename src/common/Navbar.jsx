@@ -2,6 +2,7 @@ import React from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import GoogleAuth from "../auth/GoogleAuth";
 import logo from "../assets/logof.jpg"
+import "./style.css"
 
 const menuItems = [
   {
@@ -25,11 +26,11 @@ export function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
-    <div className="relative w-full bg-green-300" style={{backgroundColor: "#f9f9f9"}}>
+    <div className="relative w-full" style={{backgroundColor: "#fff"}}>
       <div className="mx-auto flex max-w-7xl h-16 items-center justify-between px-4 py-1 sm:px-6 lg:px-8">
-        <div className="inline-flex items-center space-x-2 w-48 h-40 rounded-lg overflow-hidden shadow-sm align-baseline">
-          <span>
-            <img className="mx-auto p-6 rounded-lg" src={logo} alt="Logo" width={400} height={20} />
+        <div className="inline-flex items-center space-x-2 w-48 h-[100%] rounded-lg overflow-hidden align-baseline">
+          <span className=" flex items-center overflow-hidden">
+            <img className="mx-auto object-center object-contain  rounded-lg" src={logo} alt="Logo" width={400} height={20} />
           </span>
           
         </div>
@@ -54,7 +55,7 @@ export function Navbar() {
         <div><logo/></div>
           <button
             type="button"
-            className="rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-black hover:bg-black/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            className="rounded-md z-10 bg-transparent p-2 text-sm font-semibold text-black hover:bg-black/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black google-button"
           >
             <GoogleAuth />
           </button>
@@ -104,7 +105,7 @@ export function Navbar() {
                 <div className="mt-2 space-y-2">
                   <button
                     type="button"
-                    className="w-full rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                    className=" w-full rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black google-button"
                   >
                     <GoogleAuth />
                   </button>
