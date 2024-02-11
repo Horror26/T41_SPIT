@@ -14,6 +14,7 @@ router.put("/createTransactions", async (req, res) => {
       status: true,
     });
     await transactions.save();
+    console.log(transactions)
     let transact = await Connection.findOne({ farmer, lender: payee });
     let invtransact = await Connection.findOne({ lender:farmer, farmer: payee });
     var gt;
@@ -58,7 +59,10 @@ router.put("/fetchTransactions", async (req, res) => {
   try {
     const { farmer } = req.body;
     const transactions = await Transactions.find({ farmer });
-    res.json(transactions);
+    const transactions_lender = await Transactions.find({ lender: farmer });
+    console.log(transactions)
+    console.log(transactions_lender)
+    res.json({...transactions, ...transactions_lender});
   } catch (error) {
     console.log(error.message);
     res.status(500).send("Some error occured");

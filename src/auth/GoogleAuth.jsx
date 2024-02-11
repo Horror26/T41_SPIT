@@ -69,7 +69,7 @@ const GoogleAuth = () => {
   };
 
   useEffect(() => {
-    if (profile && profile.length != 0) {
+    if (profile && profile.length !== 0) {
       getToken({
         name: profile.name,
         email: profile.email,
@@ -80,7 +80,7 @@ const GoogleAuth = () => {
 
   return (
     <>
-      {profile && profile.length != 0 ? (
+      {profile && profile.length !== 0 ? (
         <div className="flex items-center gap-3">
           <img
             className="w-10 h-10 rounded-full"

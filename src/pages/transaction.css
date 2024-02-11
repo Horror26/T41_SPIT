@@ -1,0 +1,71 @@
+.transaction-form {
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: 200;
+    height: 100%;
+    width: 100%;
+    background-color: #3e3a3a4f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.transaction-form > form {
+    background-color: white;
+    max-height: 700px;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 1.7rem;
+    animation: float-to-top 1s ease-in-out forwards;
+}
+
+@keyframes float-to-top {
+    from {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.transaction-form > form > img {
+    width: 60%;
+}
+.transaction-form > form > h1 {
+    font-size: 2.4rem;
+    text-align: center;
+    font-weight: 400;
+    line-height: 4rem;
+}
+.transaction-form > form > h1 > span {
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+.payment-warning {
+
+}
+@media screen and (max-width: 425px) {
+    .transaction-form > form {
+        height: 100%;
+        width: 100%;
+    }
+    .transaction-form > form > img {
+        width: 40;
+    }
+    .transaction-form > form > h1 {
+        font-size: 2rem;
+    }
+    .transaction-form > form > h1 > span {
+        font-size: 3rem;
+    }
+    input {
+        width: 80%;
+    }
+    
+}
