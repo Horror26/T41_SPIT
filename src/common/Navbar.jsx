@@ -10,8 +10,8 @@ const menuItems = [
     href: "/",
   },
   {
-    name: "History",
-    href: "/history",
+    name: "Dashboard",
+    href: "/dashboard",
   },
   {
     name: "Contact",
