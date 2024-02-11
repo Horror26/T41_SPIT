@@ -28,7 +28,7 @@ export const AboutUs = () => {
       <div className="about-text">
         <h2>ABOUT US</h2>
         <div className="about-subtext">
-          <h3>Connecting You to the Heart of Agriculture</h3>
+          <h3 >Connecting You to the Heart of Agriculture</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis vero
             minima ratione omnis, itaque pariatur esse tempora consequuntur.
@@ -36,7 +36,8 @@ export const AboutUs = () => {
             elit. Nobis vero
           </p>
         </div>
-        <div className="cards-about-section">
+        <div className="cards-about-section" data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom">
           {content.map((content) => {
             return (
               <>
