@@ -8,12 +8,12 @@ export const Offerings = () => {
         {
             title: "Lending Loans",
             desc: "Our platform makes lending loans as easy as clicking a button",
-            link: "../",
+            link: "./Transaction",
             image: farmer1
         }, {
             title: "Finance Analysis",
             desc: "All you finances tracked at one single place",
-            link: "../",
+            link: "./cibil",
             image: farmer2
         }
     ]
