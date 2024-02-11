@@ -1,0 +1,193 @@
+{
+    "learner": {
+      "feature_names": [
+        "feature_0",
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4",
+        "feature_5",
+        "feature_6",
+        "feature_7",
+        "feature_8",
+        "feature_9",
+        "feature_10",
+        "feature_11",
+        "feature_12",
+        "feature_13",
+        "feature_14"
+      ],
+      "feature_types": [
+        "int",
+        "int",
+        "int",
+        "int",
+        "int",
+        "int",
+        "int",
+        "int",
+        "int",
+        "int",
+        "int",
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "gradient_booster": {
+        "model": {
+          "trees": [
+            {
+              "nodes": [
+                {
+                  "id": 0,
+                  "left_child": 1,
+                  "right_child": 2,
+                  "split_index": 6,
+                  "split_condition": 4.0,
+                  "default_left": true,
+                  "loss_chg": 579.5293,
+                  "sum_hessian": 1781.0,
+                  "leaf_value": 0.0
+                },
+                {
+                  "id": 1,
+                  "left_child": 3,
+                  "right_child": 4,
+                  "split_index": 0,
+                  "split_condition": 152.0,
+                  "default_left": true,
+                  "loss_chg": 93.42529,
+                  "sum_hessian": 1106.0,
+                  "leaf_value": 0.0
+                },
+                {
+                  "id": 2,
+                  "left_child": 5,
+                  "right_child": 6,
+                  "split_index": 0,
+                  "split_condition": 158.0,
+                  "default_left": true,
+                  "loss_chg": 72.205086,
+                  "sum_hessian": 675.0,
+                  "leaf_value": 0.0
+                },
+                {
+                  "id": 3,
+                  "left_child": 7,
+                  "right_child": 8,
+                  "split_index": 0,
+                  "split_condition": 42.0,
+                  "default_left": true,
+                  "loss_chg": 44.51349,
+                  "sum_hessian": 570.0,
+                  "leaf_value": 0.0
+                },
+                {
+                  "id": 4,
+                  "left_child": 9,
+                  "right_child": 10,
+                  "split_index": 0,
+                  "split_condition": 291.0,
+                  "default_left": true,
+                  "loss_chg": 204.19458,
+                  "sum_hessian": 536.0,
+                  "leaf_value": 0.0
+                },
+                {
+                  "id": 5,
+                  "left_child": 11,
+                  "right_child": 12,
+                  "split_index": 6,
+                  "split_condition": 5.0,
+                  "default_left": true,
+                  "loss_chg": 17.01892,
+                  "sum_hessian": 192.0,
+                  "leaf_value": 0.0
+                },
+                {
+                  "id": 6,
+                  "left_child": 13,
+                  "right_child": 14,
+                  "split_index": 0,
+                  "split_condition": 291.0,
+                  "default_left": true,
+                  "loss_chg": 58.88086,
+                  "sum_hessian": 483.0,
+                  "leaf_value": 0.0
+                },
+                {
+                  "id": 7,
+                  "left_child": -1,
+                  "right_child": -1,
+                  "split_index": -1,
+                  "split_condition": 0.0,
+                  "default_left": false,
+                  "loss_chg": 0.0,
+                  "sum_hessian": 139.0,
+                  "leaf_value": -0.000100000005
+                },
+                {
+                  "id": 8,
+                  "left_child": -1,
+                  "right_child": -1,
+                  "split_index": -1,
+                  "split_condition": 0.0,
+                  "default_left": false,
+                  "loss_chg": 0.0,
+                  "sum_hessian": 431.0,
+                  "leaf_value": -0.000100000005
+                },
+                {
+                  "id": 9,
+                  "left_child": -1,
+                  "right_child": -1,
+                  "split_index": -1,
+                  "split_condition": 0.0,
+                  "default_left": false,
+                  "loss_chg": 0.0,
+                  "sum_hessian": 222.0,
+                  "leaf_value": -0.000100000005
+                },
+                {
+                  "id": 10,
+                  "left_child": -1,
+                  "right_child": -1,
+                  "split_index": -1,
+                  "split_condition": 0.0,
+                  "default_left": false,
+                  "loss_chg": 0.0,
+                  "sum_hessian": 314.0,
+                  "leaf_value": -0.000100000005
+                },
+                {
+                  "id": 11,
+                  "left_child": -1,
+                  "right_child": -1,
+                  "split_index": -1,
+                  "split_condition": 0.0,
+                  "default_left": false,
+                  "loss_chg": 0.0,
+                  "sum_hessian": 166.0,
+                  "leaf_value": -0.000100000005
+                },
+                {
+                  "id": 12,
+                  "left_child": -1,
+                  "right_child": -1,
+                  "split_index": -1,
+                  "split_condition": 0.0,
+                  "default_left": false,
+                  "loss_chg": 0.0,
+                  "sum_hessian": 26.0,
+                  "leaf_value": -0.000100000005
+                },
+                {
+                  "id": 13,
+                  "left_child": -1,
+                  "right_child": -1,
+                  "split_index": -1,
+                  "split_condition": 0.0,
+                  "default_left": false,
+                  "loss_chg": 0.
+                }
