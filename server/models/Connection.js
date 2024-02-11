@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const ConnectionSchema = new Schema({
+const TransactionSchema = new Schema({
   farmer: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "farmer",
@@ -17,5 +17,5 @@ const ConnectionSchema = new Schema({
   repaymentStatus: { type: String },
 });
 
-const Connection = mongoose.model("Connection", ConnectionSchema);
-module.exports = Connection;
+const Transaction = mongoose.model("Transaction", TransactionSchema);
+module.exports = Transaction;
