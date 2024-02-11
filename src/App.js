@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import { Landing } from "./pages/Landing/Landing";
 import About from "./pages/Landing/About";
 import Transaction from "./pages/Transaction";
+import { DashBoard } from "./pages/Dashboard/DashBoard";
 function App() {
   const authModal = useAuthModal();
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/About" element={<About />} />
           <Route path="/Transaction" element={<Transaction />} />
+          <Route path="/Dashboard" element={<DashBoard />} />
         </Routes>
       </div>
       <Footer />
