@@ -107,8 +107,7 @@
             <th>Verify</th>
           </tr>
         </thead>
-        <tbody id="userTableBody">
-        </tbody>
+        <tbody id="userTableBody"></tbody>
       </table>
     </div>
 
@@ -120,80 +119,44 @@
     </div>
 
     <script>
-      const userdata = [
-        {
-          email: "steve@gmail.com",
-          picture:
-            "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          verify: false,
-        },
-        {
-          email: "darshan@gmail.com",
-          picture:
-            "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          verify: false,
-        },
-        {
-          email: "dhruv@gmail.com",
-          picture:
-            "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          verify: false,
-        },
-        {
-          email: "deepesh@gmail.com",
-          picture:
-            "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          verify: false,
-        },
-      ];
+      //   const userdata = [
+      //     {
+      //       email: "steve@gmail.com",
+      //       picture:
+      //         "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      //       verify: false,
+      //     },
+      //     {
+      //       email: "darshan@gmail.com",
+      //       picture:
+      //         "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      //       verify: false,
+      //     },
+      //     {
+      //       email: "dhruv@gmail.com",
+      //       picture:
+      //         "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      //       verify: false,
+      //     },
+      //     {
+      //       email: "deepesh@gmail.com",
+      //       picture:
+      //         "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      //       verify: false,
+      //     },
+      //   ];
 
       var tbody = document.getElementById("userTableBody");
 
       // Loop through the userdata array
-      userdata.forEach(function (user) {
-        // Create a new table row
-        var row = document.createElement("tr");
 
-        // Create table data for email
-        var emailData = document.createElement("td");
-        emailData.textContent = user.email;
-
-        // Create table data for the "View Image" button
-        var viewImageData = document.createElement("td");
-        var viewImageButton = document.createElement("button");
-        viewImageButton.textContent = "View Image";
-        viewImageButton.onclick = function () {
-          openModal(user.picture);
-        };
-        viewImageData.appendChild(viewImageButton);
-
-        // Create table data for the "Verify" button
-        var verifyData = document.createElement("td");
-        var verifyButton = document.createElement("button");
-        verifyButton.id = "verify-button"
-        verifyButton.setAttribute('data-email', user.email);
-        verifyButton.textContent = "Verify";
-        verifyButton.onclick = function () {
-          verifyUser(user.email);
-        };
-        verifyData.appendChild(verifyButton);
-
-        // Append table data to the table row
-        row.appendChild(emailData);
-        row.appendChild(viewImageData);
-        row.appendChild(verifyData);
-
-        // Append the table row to the tbody
-        tbody.appendChild(row);
-      });
-// updateverify
-// fetchallusers
-      fetch("http://localhost:5000", {
-        method: "POST",
+      // updateverify
+      // fetchallusers
+      fetch("http://localhost:8000/api/auth/fetchallusers", {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
       })
         .then((response) => {
           if (!response.ok) {
@@ -202,7 +165,48 @@
           return response.json();
         })
         .then((data) => {
-          console.log("Response:", data);
+          data.forEach(function (user) {
+            // Create a new table row
+            var row = document.createElement("tr");
+
+            // Create table data for email
+            var emailData = document.createElement("td");
+            emailData.textContent = user.email;
+
+            // Create table data for the "View Image" button
+            var viewImageData = document.createElement("td");
+            var viewImageButton = document.createElement("button");
+            viewImageButton.textContent = "View Image";
+            viewImageButton.onclick = function () {
+              openModal(user.picture);
+            };
+            viewImageData.appendChild(viewImageButton);
+
+            // Create table data for the "Verify" button
+            var verifyData = document.createElement("td");
+            var verifyButton = document.createElement("button");
+            verifyButton.id = "verify-button";
+            verifyButton.setAttribute("data-email", user._id);
+            if (user.verified) {
+              verifyButton.textContent = "Verified";
+              verifyButton.style.backgroundColor = "green";
+            } else {
+              verifyButton.textContent = "Verify";
+              verifyButton.style.backgroundColor = "red";
+            }
+            verifyButton.onclick = function () {
+              verifyUser(user._id);
+            };
+            verifyData.appendChild(verifyButton);
+
+            // Append table data to the table row
+            row.appendChild(emailData);
+            row.appendChild(viewImageData);
+            row.appendChild(verifyData);
+
+            // Append the table row to the tbody
+            tbody.appendChild(row);
+          });
         });
 
       function openModal(img) {
@@ -218,6 +222,31 @@
 
       function verifyUser(email) {
         alert("User verified! " + email);
+        fetch("http://localhost:8000/api/auth/updateverified", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            id: email,
+          }),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            const btn = document.querySelector(`[data-email="${data.user._id}"]`);
+            if (data.user.verified) {
+              btn.textContent = "Verified";
+              btn.style.backgroundColor = "green";
+            } else {
+              btn.textContent = "Verify";
+              btn.style.backgroundColor = "red";
+            }
+          });
         // You can make an AJAX call to verify user on the backend here
       }
     </script>
