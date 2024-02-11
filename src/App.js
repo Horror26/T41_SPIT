@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import { Landing } from "./pages/Landing/Landing";
 import About from "./pages/Landing/About";
 import Transaction from "./pages/Transaction";
+import History from "./pages/History"
 function App() {
   const authModal = useAuthModal();
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/About" element={<About />} />
           <Route path="/Transaction" element={<Transaction />} />
+          <Route path="/history" element={<History />} />
         </Routes>
       </div>
       <Footer />
