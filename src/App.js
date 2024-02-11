@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import { Landing } from "./pages/Landing/Landing";
 import About from "./pages/Landing/About";
+import Transaction from "./pages/Transaction";
 function App() {
   const authModal = useAuthModal();
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/About" element={<About />} />
+          <Route path="/Transaction" element={<Transaction />} />
         </Routes>
       </div>
       <Footer />
