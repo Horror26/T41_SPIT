@@ -3,8 +3,10 @@ import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import useAuthModal from "../hooks/useAuthModal";
 import Logo from "../assets/logo.webp";
+import { useNavigate } from "react-router";
 
 const GoogleAuth = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState([]);
   const [profile, setProfile] = useState([]);
   const authModal = useAuthModal();
@@ -62,6 +64,7 @@ const GoogleAuth = () => {
           },
         }
       );
+      navigate("register")
       authModal.onOpen();
     } catch (error) {
       console.error("Error", error.message);

@@ -11,6 +11,8 @@ import About from "./pages/Landing/About";
 import Transaction from "./pages/Transaction";
 import { DashBoard } from "./pages/Dashboard/DashBoard";
 import History from "./pages/History"
+
+import Register from "./pages/Register";
 import { CibilScore } from "./pages/CibilScore";
 function App() {
   const authModal = useAuthModal();
@@ -34,6 +36,7 @@ function App() {
           <Route path="/Transaction" element={<Transaction />} />
           <Route path="/Dashboard" element={<DashBoard />} />
           <Route path="/history" element={<History />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/cibil" element={<CibilScore />} />
         </Routes>
       </div>

@@ -5,15 +5,18 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { BrowserRouter } from "react-router-dom";
+import ScrollToTop from "./common/ScrollToTop";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
+  <ScrollToTop>
   <GoogleOAuthProvider clientId="552275309152-15hg47tkflcqbc0btv93oa696kjqcr9v.apps.googleusercontent.com">
     <React.StrictMode>
       <App />
     </React.StrictMode>
   </GoogleOAuthProvider>
+  </ScrollToTop>
   </BrowserRouter>
 );
 
