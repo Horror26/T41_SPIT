@@ -30,10 +30,7 @@ export const AboutUs = () => {
         <div className="about-subtext">
           <h3 >Connecting You to the Heart of Agriculture</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis vero
-            minima ratione omnis, itaque pariatur esse tempora consequuntur.
-            Vero, atque! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Nobis vero
+          Welcome toCrop Capitals, where we revolutionize agricultural lending with our secure, transparent, and accessible platform. Our real-time transaction monitoring ensures dynamic updates, while our comprehensive data storage empowers informed decision-making.
           </p>
         </div>
         <div className="cards-about-section" data-aos="fade-up"

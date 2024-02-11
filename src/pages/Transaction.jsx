@@ -36,7 +36,7 @@ const Transaction = () => {
       console.log(error);
     }
   };
-  return (
+  return (<div className=" h-screen w-full flex justify-center items-center">
     <div className="transaction-form">
       <form
         onSubmit={handlesubmit}
@@ -81,15 +81,22 @@ const Transaction = () => {
           </label>
         </div>
         <h4 className="payment-warning">Ensure the details are correct</h4>
-        <div className="">
+        <div className=" flex gap-8">
           <button
-            type="submit"
+            type="submit"  onClick={() => navigate("/history")}
             className="text-black w-[100%] rounded-lg bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none  focus:ring-purple-300 font-medium text-sm sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 "
           >
             pay securely
           </button>
+          <button
+            onClick={() => navigate("../")}
+            className="text-black w-[100%] rounded-lg bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none  focus:ring-purple-300 font-medium text-sm sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 "
+          >
+            cancle
+          </button>
         </div>
       </form>
+    </div>
     </div>
   );
 };
